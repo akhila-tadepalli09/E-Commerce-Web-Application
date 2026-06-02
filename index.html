@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>People's Clone</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo">People's Clone</div>
+    <input type="text" placeholder="Search for products...">
+    <nav>
+      <a href="login.html">Login</a>
+      <a href="register.html">Register</a>
+      <div class="cart">🛒 Cart <span id="cart-count">0</span></div>
+      <div id="welcome-msg" style="font-size: 20px; font-weight: bold; margin: 15px 0; color: green;"></div>
+
+    </nav>
+  </header>
+
+  <!-- Product Section -->
+  <main class="product-container">
+    <!-- Repeat product cards -->
+    <script>
+      const products = [
+        {name: "Smartphone", price: 12999, img: "images/phone.jpg"},
+        {name: "Laptop", price: 45000, img: "images/laptop.jpg"},
+        {name: "Shoes", price: 1999, img: "images/shoes.jpg"},
+        {name: "Watch", price: 2999, img: "images/watch.jpg"},
+        {name: "Headphones", price: 999, img: "images/headphones.jpg"},
+        {name: "Camera", price: 15000, img: "images/camera.jpg"},
+        {name: "Backpack", price: 799, img: "images/bag.jpg"},
+        {name: "T-shirt", price: 499, img: "images/tshirt.jpg"},
+        {name: "Refrigerator", price: 22000, img: "images/fridge.jpg"},
+        {name: "Microwave", price: 8000, img: "images/microwave.jpg"},
+        {name: "Television", price: 32000, img: "images/tv.jpg"},
+        {name: "Tablet", price: 17999, img: "images/tablet.jpg"},
+        {name: "Keyboard", price: 699, img: "images/keyboard.jpg"},
+        {name: "Mouse", price: 499, img: "images/mouse.jpg"},
+        {name: "Gaming Console", price: 35000, img: "images/console.jpg"},
+        {name: "Speaker", price: 2499, img: "images/speaker.jpg"},
+        {name: "Fan", price: 1599, img: "images/fan.jpg"},
+        {name: "Air Conditioner", price: 28000, img: "images/ac.jpg"},
+        {name: "Washing Machine", price: 18000, img: "images/wm.jpg"},
+        {name: "Mixer Grinder", price: 3500, img: "images/mixer.jpg"},
+        {name: "Water Bottle", price: 299, img: "images/bottle.jpg"},
+        {name: "Sunglasses", price: 699, img: "images/sunglasses.jpg"},
+        {name: "Cap", price: 199, img: "images/cap.jpg"},
+        {name: "Perfume", price: 1299, img: "images/perfume.jpg"},
+        {name: "Book", price: 399, img: "images/book.jpg"},
+        {name: "Chair", price: 2500, img: "images/chair.jpg"},
+        {name: "Table", price: 4500, img: "images/table.jpg"},
+        {name: "Bed", price: 22000, img: "images/bed.jpg"},
+        {name: "Lamp", price: 799, img: "images/lamp.jpg"}
+      ];
+      document.write(products.map(p => `
+        <div class="product-card">
+          <img src="${p.img}" alt="${p.name}">
+          <h3>${p.name}</h3>
+          <p>High quality ${p.name.toLowerCase()} for you.</p>
+          <span class="price">₹${p.price}</span>
+          <button onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
+        </div>
+      `).join(''));
+    </script>
+  </main>
+
+  <!-- Cart Display -->
+  <section class="cart-section">
+    <h2>Your Cart</h2>
+    <ul id="cart-items"></ul>
+    <h3>Total: ₹<span id="cart-total">0</span></h3>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
